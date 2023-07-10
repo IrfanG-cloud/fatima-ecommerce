@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaBars, FaTimesCircle, FaCartPlus, FaSearch} from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RootState } from '@/store/store';
-import Image from 'next/image'
+// import Image from 'next/image'
 
 
 export default function Header() {
@@ -21,13 +21,14 @@ export default function Header() {
             <div className='w-full flex justify-between md:items-center md:py-0'>
                 <span>
                 <Link href="/">
-                        <Image
+                    <h1 className='text-xl pt-1 text-[#cdcdcd] md:text-2xl md:pt-0'>Fatima<span className="text-black">Alhaj</span></h1>
+                        {/* <Image
                             src="/logo.png"
                             alt="logo"
                             width={200}
                             height={200}
-                            className='text-xl pt-1 text-[#000] md:text-2xl md:pt-0'
-                        />
+                            
+                        /> */}
                     </Link>
                 </span>
                 <div className={`bg-white flex-1 justify-self-center pb-3 mt-13 md:block md:pb-0 md:mt-0 ${ navbar ? 'p-15 md:p-0 block' : 'hidden'}`}>
