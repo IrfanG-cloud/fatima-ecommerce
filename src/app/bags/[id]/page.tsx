@@ -11,7 +11,7 @@ import Amountincrease from '@/app/components/Counter';
 
 export const getProductData:any = async(param='') => {
   console.log(param)
-  const res = await client.fetch(`*[_type== 'product' && category-> name== 'sneakers' && title=='T-shirtboys']{
+  const res = await client.fetch(`*[_type== 'product' && category-> name== 'bags' && title=='T-shirtboys']{
     title,
     description,
     price,
@@ -69,9 +69,7 @@ export default async function page({ params }: { params: { id: string }}) {
               </div>
  
               <div>
-              <div className='ml-4 my-6'>
-                <Amountincrease />
-              </div>
+              <div className='ml-4 my-6'><Amountincrease /></div>
               </div>
 
               <div className='flex my-4'>
