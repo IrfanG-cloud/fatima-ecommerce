@@ -32,7 +32,7 @@ export default function Header() {
                     </Link>
                 </span>
                 <div className={`bg-white flex-1 justify-self-center pb-3 mt-13 md:block md:pb-0 md:mt-0 ${ navbar ? 'p-15 md:p-0 block' : 'hidden'}`}>
-                    <ul className='h-screen justify-center items-center mt-20 md:h-auto md:flex md:ml-40 md:mt-0'>
+                    <ul className='h-screen justify-start items-center mt-20 md:h-auto md:flex md:ml-40 md:mt-0'>
                         <li className='after:text-left p-3 md:mb-4font-bold text-1xl md:text-[16px] md:px-4 hover:text-[var(--primary-color)] cursor-pointer'>
                             <Link href="/women" onClick={() => setNavbar(!navbar)}>Women</Link>
                         </li>
