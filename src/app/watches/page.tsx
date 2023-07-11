@@ -5,9 +5,10 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
+
 export const getProductData = async () => {
 
-    const res = await client.fetch(`*[_type== 'product' && category-> name== 'men']`)
+    const res = await client.fetch(`*[_type== 'product' && category-> name== 'watches']`)
   
     return res;
 
@@ -46,7 +47,7 @@ export default async function Men(){
             <Image 
                 src={urlForImage(item.image).url()} 
                 alt="product" 
-                width={300} height={500} />
+                width={300} height={400} />
             <span>{item.price} AED</span>
             <h3>{item.title}</h3>
             </Link>

@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { Image as IImage, useDataset } from 'sanity'
 import { urlForImage } from '../../../../sanity/lib/image'
 
+
 import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
 export const getProductData:any = async(param='') => {
   console.log(param)
-  const res = await client.fetch(`*[_type== 'product' && category-> name== 'men' && title=='T-shirtboys']{
+  const res = await client.fetch(`*[_type== 'product' && category-> name== 'watches' && title=='']{
     title,
     description,
     price,
@@ -75,10 +76,12 @@ export default async function page({ params }: { params: { id: string }}) {
               <div className='flex my-4'>
                 <div>
                   <Link href="/cart">
+                  
                     <button className="bg-[#000] text-white p-2 hover:bg-[#000]">
                       Add to Cart
                     </button>
                   </Link>
+                  
                 </div>
                   
                 <div>
