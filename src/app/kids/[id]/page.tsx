@@ -83,7 +83,7 @@ export default async function page({ params }: { params: { id: string }}) {
                 </div>
                   
                 <div>
-                  <p className='ml-4 font-bold text-2xl'> $' + {data[0]?.price}</p>
+                  <p className='ml-4 font-bold text-2xl'>{data[0]?.price} AED</p>
                 </div>
                   
               </div>
