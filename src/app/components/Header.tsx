@@ -21,7 +21,7 @@ export default function Header() {
             <div className='w-full flex justify-between md:items-center md:py-0'>
                 <span>
                 <Link href="/">
-                    <h1 className='text-xl pt-1 text-[#cdcdcd] md:text-2xl md:pt-0'>Fatima<span className="text-black">Alhaj</span></h1>
+                    <h1 className='text-2xl pt-1 text-black md:text-2xl md:pt-0'>Fatima<span className="text-[#999DA0]">Alhaj</span></h1>
                         {/* <Image
                             src="/logo.png"
                             alt="logo"

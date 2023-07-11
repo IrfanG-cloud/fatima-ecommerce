@@ -47,7 +47,7 @@ export default async function Men(){
                 src={urlForImage(item.image).url()} 
                 alt="product" 
                 width={300} height={500} />
-            <span>${item.price}</span>
+            <span>{item.price} AED</span>
             <h3>{item.title}</h3>
             </Link>
             

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -48,8 +50,8 @@ export default async function Kids() {
                 width={300} 
                 height={500} 
             />
-            <p className='font-bold'>${item.price}</p>
-            <p className='font-bold'>{item.title}</p>
+            <p>{item.price} AED</p>
+            <p >{item.title}</p>
             </Link>
         </div>
         ))}
