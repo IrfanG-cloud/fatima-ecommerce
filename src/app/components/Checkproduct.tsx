@@ -12,6 +12,7 @@ export const getProductData = async () => {
   }
   
   interface IProduct{
+    id:any,
     title:string,
     description:string,
     price: number,
@@ -44,7 +45,7 @@ export default async function Checkproduct() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-1 px-6'>
         {data.map((item) => (
-            <div className="item py-4">
+            <div key={item.id} className="item py-4">
                 <Link href="/products" className='transition-transform duration-500 ease-in-out transform hover:scale-150'>
                 <Image 
                     src={urlForImage(item.image).url()} 

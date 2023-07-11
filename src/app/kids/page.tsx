@@ -14,6 +14,7 @@ export const getProductData = async () => {
   }
   
   interface IProduct{
+    id:any,
     title:string,
     description:string,
     price: number,
@@ -42,7 +43,7 @@ export default async function Kids() {
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-2 px-6'>
         {data.map((item) => (
-        <div className="item p-6 border my-2 border-[#cdcdcd]">
+        <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
             <Link href={/products/+item.title}>
             <Image 
                 src={urlForImage(item.image).url()} 
