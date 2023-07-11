@@ -25,18 +25,22 @@ const getProductData = async () => {
     }
   }
 
-export default async function Men(){
-    const data:IProduct[]= await getProductData();
+  type PageParams = {
+    slug: string;
+  };
+
+export default async function Men(): Promise<PageParams[]> {
+    const data:IProduct[] = await getProductData();
     console.log(data);
 
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     <div className="w-full my-20">
