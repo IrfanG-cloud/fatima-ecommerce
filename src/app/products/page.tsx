@@ -60,7 +60,7 @@ export default async function Products() {
                 width={300} 
                 height={500} 
             />
-            <p>${item.price}</p>
+            <p>{item.price} AED</p>
             <h3>{item.title}</h3>
             </Link>
         </div>
