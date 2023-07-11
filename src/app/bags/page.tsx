@@ -29,7 +29,7 @@ const getProductData = async () => {
     slug: string;
   };
 
-export default async function Men(): Promise<PageParams[]> {
+export default async function Men({ params }: { params: { slug: string } }){
     const data:IProduct[] = await getProductData();
     console.log(data);
 
