@@ -85,14 +85,14 @@ interface IProduct {
     }
 }
 
-export default async function Accessories({products }: { products: IProduct[] }) {
-  // const products:IProduct[] = await getProductData();
-  // console.log(products)
+export default async function Accessories({ }: { products: IProduct[] }) {
+  const products:IProduct[] = await getProductData();
+  console.log(products)
 
   return (
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-            {products?.map((item) => (
+            {products.map((item) => (
                 <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
                     <Link href={/products/+item.title}>
                         <Image
