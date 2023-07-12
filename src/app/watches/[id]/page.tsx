@@ -75,10 +75,10 @@ export default async function page({ params }: { params: { id: string }}) {
 
               <div className='flex my-4'>
                 <div>
-                  <Link href="/cart">
+                  <Link href={"https://api.whatsapp.com/send?phone=963995817380"}>
                   
                     <button className="bg-[#000] text-white p-2 hover:bg-[#000]">
-                      Add to Cart
+                      Add To Cart
                     </button>
                   </Link>
                   
