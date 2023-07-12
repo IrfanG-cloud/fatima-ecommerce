@@ -85,22 +85,13 @@ interface IProduct {
     }
 }
 
-export default function Accessories({ products }: { products: IProduct[] }) {
-
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
-  
+export default async function Accessories({ product }: { product: IProduct[] }) {
+  const data:IProduct[] = await getProductData();
 
   return (
     <div className="w-full my-20">
       <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-        {products?.map((item) => (
+        {data.map((item) => (
           <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
             <Link href={`/products/${item.title}`}>
               <Image
@@ -122,21 +113,19 @@ export default function Accessories({ products }: { products: IProduct[] }) {
 }
 
 
-export async function getServerSideProps() {
-  const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
-  console.log('products:', products);  // Log the products to console.
+const getProductData = async () =>  {
+  const data = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
+  // console.log('products:', products);  // Log the products to console.
+  console.log(data);
   
-  if (!products) {
-    return {
-      notFound: true, // This will render the built-in 404 page in Next.js
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     notFound: true, // This will render the built-in 404 page in Next.js
+  //   };
+  // }
   
-  return {
-    props: {
-      products,
-    }
-  };
+  return data;
+
 }
 
 
