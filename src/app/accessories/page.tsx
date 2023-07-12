@@ -85,8 +85,9 @@ interface IProduct {
     }
 }
 
-export default async function Accessories({ }: { products: IProduct[] }) {
-  const products:IProduct[] = await getProductData();
+export default async function Accessories({products }: { products: IProduct[] }) {
+  // const products:IProduct[] = await getProductData();
+  // console.log(products)
 
   return (
     <div className="w-full my-20">
