@@ -53,6 +53,7 @@ export default async function Kids() {
             />
             <p>{item.price} AED</p>
             <p >{item.title}</p>
+            <p>{item.description}</p>
             </Link>
         </div>
         ))}

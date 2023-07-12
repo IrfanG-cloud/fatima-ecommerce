@@ -49,7 +49,8 @@ export default async function Men(){
                 alt="product" 
                 width={300} height={500} />
             <span>{item.price} AED</span>
-            <h3>{item.title}</h3>
+            <p>{item.title}</p>
+            <p>{item.description}</p>
             </Link>
             
             </div>

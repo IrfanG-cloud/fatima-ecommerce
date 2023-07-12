@@ -61,7 +61,8 @@ export default async function Products() {
                 height={500} 
             />
             <p>{item.price} AED</p>
-            <h3>{item.title}</h3>
+            <p>{item.title}</p>
+            <p>{item.description}</p>
             </Link>
         </div>
     ))}

@@ -52,6 +52,9 @@ export default function Header() {
                             <Link href="/sneakers" onClick={() => setNavbar(!navbar)}>Sneakers</Link>
                         </li>
                         <li className='after:text-left p-3 md:mb-4font-bold text-1xl md:text-[16px] md:px-4 hover:text-[var(--primary-color)] cursor-pointer'>
+                            <Link href="/accessories" onClick={() => setNavbar(!navbar)}>Accessories</Link>
+                        </li>
+                        <li className='after:text-left p-3 md:mb-4font-bold text-1xl md:text-[16px] md:px-4 hover:text-[var(--primary-color)] cursor-pointer'>
                             <Link href="/products" onClick={() => setNavbar(!navbar)}>All Products</Link>
                         </li>
                     </ul>

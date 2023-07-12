@@ -44,7 +44,7 @@ export default async function Promotions() {
             </span>
             <h1 className=' text-2xl font-bold md:text-4xl'>Our Promotions Events</h1>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-1 px-6'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-x-1 px-6'>
         {data.map((item) => (
             <div key={item.id} className="item py-4">
                 <Link href="/products" className='transition-transform duration-500 ease-in-out transform hover:scale-150'>
@@ -54,7 +54,7 @@ export default async function Promotions() {
                     width={300}
                     height={500} 
                 />
-                <p className='font-bold'>${item.price}</p>
+                <p className='font-bold'>{item.price} AED</p>
                 <h3 className='font-bold'>{item.title}</h3>
                 </Link>
             </div>
