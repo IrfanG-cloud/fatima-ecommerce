@@ -25,7 +25,7 @@ export const getProductData = async () => {
     }
   }
 
-export default async function Men(){
+export default async function Sneakers(){
     const data:IProduct[]= await getProductData();
     console.log(data);
 

@@ -53,8 +53,9 @@ export default async function Checkproduct() {
                     width={300} 
                     height={500} 
                 />
-                <p className='font-bold'>{item.price} AED</p>
-                <h3 className='font-bold'>{item.title}</h3>
+                <p>{item.price} AED</p>
+                <p>{item.title}</p>
+                <p>{item.description}</p>
                 </Link>
             </div>
         ))}

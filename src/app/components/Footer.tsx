@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
     <div className="text-center text-[#4f4f4f] border-t-2 border-[#1d1d1d] py-4">
-          All right reserved &copy; Fatima Alhaj {(new Date()).getFullYear()}
+          All right reserved &copy; Fatima Alhaj | Developed by Irfan G. {(new Date()).getFullYear()}
     </div>
     </div>
   )

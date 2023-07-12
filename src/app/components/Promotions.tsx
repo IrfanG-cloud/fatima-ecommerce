@@ -55,7 +55,8 @@ export default async function Promotions() {
                     height={500} 
                 />
                 <p className='font-bold'>{item.price} AED</p>
-                <h3 className='font-bold'>{item.title}</h3>
+                <p>{item.title}</p>
+                <p>{item.description}</p>
                 </Link>
             </div>
         ))}
