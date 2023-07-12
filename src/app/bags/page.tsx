@@ -4,9 +4,8 @@ import Image from 'next/image'
 import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
-import { getProductData } from '../components/Checkproduct'
 
-const getProductDatata:any = async (param='') => {
+const getProductData = async () => {
 
     const res = await client.fetch(`*[_type== 'product' && category-> name== 'bags']`)
   
@@ -26,8 +25,11 @@ const getProductDatata:any = async (param='') => {
     }
   }
 
+  type PageParams = {
+    slug: string;
+  };
 
-export default async function Men(){
+export default async function Men({ params }: { params: { slug: string } }){
     const data:IProduct[] = await getProductData();
     console.log(data);
 
