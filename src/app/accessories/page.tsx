@@ -25,7 +25,7 @@ const getProductData = async () => {
   }
 
 
-export default async function Accessories({ params }: { params: { slug: string } }) {
+export default async function Accessories() {
 
     const data:IProduct[]= await getProductData();
     console.log(data);

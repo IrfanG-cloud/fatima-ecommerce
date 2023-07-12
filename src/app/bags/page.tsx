@@ -25,11 +25,10 @@ const getProductData = async () => {
     }
   }
 
-  type PageParams = {
-    slug: string;
-  };
+  
+  
 
-export default async function Men({ params }: { params: { slug: string } }){
+export default async function Men(){
     const data:IProduct[] = await getProductData();
     console.log(data);
 
