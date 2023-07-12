@@ -92,7 +92,7 @@ export default async function Accessories({products }: { products: IProduct[] })
   return (
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-            {products && products.map((item) => (
+            {products?.map((item) => (
                 <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
                     <Link href={/products/+item.title}>
                         <Image
