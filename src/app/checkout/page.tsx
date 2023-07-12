@@ -12,7 +12,7 @@ export default function page() {
   return (
  
     <div className="w-full my-20">
-        <div className='grid grid-cols-1 justify-center item-center md:grid-cols-2 gap-x-2 px-6'>
+        <div className='grid grid-cols-1 justify-center item-center md:grid-cols-2 gap-x-4 px-6'>
                 <div className="w-3/5 flex">
                     <div className=''>
                         <h1>Image here</h1>
