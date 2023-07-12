@@ -85,48 +85,45 @@ interface IProduct {
     }
 }
 
-export default async function Accessories({ product }: { product: IProduct[] }) {
-  const data:IProduct[] = await getProductData();
+export default async function Accessories({ }: { products: IProduct[] }) {
+  const products:IProduct[] = await getProductData();
 
   return (
     <div className="w-full my-20">
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-        {data.map((item) => (
-          <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
-            <Link href={`/products/${item.title}`}>
-              <Image
-                src={urlForImage(item.image).url()}
-                alt="product"
-                width={300}
-                height={500}
-              />
-              <p>{item.price} AED</p>
-              <p >{item.title}</p>
-              <p>{item.description}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
+            {products && products.map((item) => (
+                <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
+                    <Link href={/products/+item.title}>
+                        <Image
+                            src={urlForImage(item.image).url()}
+                            alt="product"
+                            width={300}
+                            height={500}
+                        />
+                        <p>{item.price} AED</p>
+                        <p >{item.title}</p>
+                        <p>{item.description}</p>
+                    </Link>
+                </div>
+            ))}
+        </div>
     </div>
-  )
-  
+)
 }
 
+export async function getProductData() {
+  const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
+  console.log( products);  // Log the products to console.
+  
+  if (!products) {
+    return {
+      notFound: true, // This will render the built-in 404 page in Next.js
+    };
+  }
+  
+  return products;
 
-const getProductData = async () =>  {
-  const data = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
-  // console.log('products:', products);  // Log the products to console.
-  console.log(data);
-  
-  // if (!data) {
-  //   return {
-  //     notFound: true, // This will render the built-in 404 page in Next.js
-  //   };
-  // }
-  
-  return data;
 
 }
-
 
 
