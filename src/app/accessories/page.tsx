@@ -6,12 +6,13 @@ import Image from 'next/image'
 import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
+import Products from '../products/page'
 
 const getProductData = async () =>{
   const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
   console.log( products);  // Log the products to console.
   
-  return products;  // Return products inside props
+  return products; // Return products inside props
 }
 
 
@@ -26,8 +27,8 @@ interface IProduct {
     }
 }
 
-export default async function Accessories( {  }: { products: IProduct[] }) {
-  const products:IProduct[] = await getProductData ();
+export default async function Accessories({ products }: { products: IProduct[] }) {
+  var products:IProduct[] = await getProductData ();
 
   return (
     <div className="w-full my-20">
