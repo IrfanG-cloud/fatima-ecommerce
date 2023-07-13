@@ -7,8 +7,8 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
-const getServerSideProps = async () =>{
-  const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
+const getServerSideProps = () =>{
+  const products = client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
   console.log( products);  // Log the products to console.
   
   return products;  // Return products inside props
