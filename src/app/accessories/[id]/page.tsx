@@ -26,7 +26,7 @@ export const getProductData:any = async(param='') => {
   }
   
   interface IProduct{
-
+    id: any
     title:string,
     description:string,
     price: number,
