@@ -9,7 +9,7 @@ import { urlForImage } from '../../../../sanity/lib/image'
 import Link from 'next/link'
 import Counter from '@/app/components/Counter'
 
-export const getProductData:any = (param='') => {
+const getServerSideProps:any = (param='') => {
 
   const res = client.fetch(`*[_type== 'product' && title=='${param}']{
     title,
@@ -41,7 +41,7 @@ export default async function page({ params }: { params: { id: string }}) {
  let param: string = params.id;
 
 
-  const data= await getProductData(param);
+  const data= await getServerSideProps(param);
     
    const handleAddToCart = async () => {
     const res = fetch("/api/cart", {
