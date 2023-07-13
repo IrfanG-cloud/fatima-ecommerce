@@ -6,7 +6,7 @@ import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
 
-const getProductData = () => {
+const getServerSideProps = () => {
 
     const res = client.fetch(`*[_type== 'product' && category-> name== 'watches']`)
   
@@ -27,17 +27,17 @@ const getProductData = () => {
   }
 
 export default async function Men(){
-    const data:IProduct[]= await getProductData();
+    const data:IProduct[]= await getServerSideProps();
     console.log(data);
 
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     <div className="w-full my-20">
