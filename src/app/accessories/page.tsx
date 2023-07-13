@@ -22,7 +22,8 @@
 
 // export default async function Accessories() {
 
-//     const data:IProduct[]= await getProductData();
+//     
+
 //     console.log(data);
 
 
@@ -62,6 +63,15 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
+
+export async function getServerSideProps() {
+  const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
+  
+  return { props: { products }};  // Return products inside props
+
+  console.log(products)
+}
+
 interface IProduct {
     id: any,
     title: string,
@@ -74,10 +84,12 @@ interface IProduct {
 }
 
 export default function Accessories({products}: { products: IProduct[] }) {
+
+  
   return (
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-            {products?.map((item) => (
+            {products.map((item) => (
                 <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
                     <Link href={/products/+item.title}>
                         <Image
@@ -96,10 +108,4 @@ export default function Accessories({products}: { products: IProduct[] }) {
   )
 }
 
-export async function getServerSideProps() {
-  const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
-  
-  return { props: { products }};  // Return products inside props
 
-  console.log(products)
-}
