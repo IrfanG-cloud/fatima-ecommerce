@@ -42,26 +42,27 @@ export default async function page({ params }: { params: { id: string }}) {
 
   const data= await getServerSideProps(param);
     console.log(data)
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     
     <div className="w-full flex justify-center items-center my-20 px-4">
   
-        {/* <div className=''>
+        <div className=''>
             <Image
               src={urlForImage(data[0]?.image).url()}
               alt={"product image"}
               width={300}
               height={500} />
-          </div> */}
+          </div>
           
           <div className="p-4">
               <div className="">

@@ -57,13 +57,13 @@ export default async function page({ params }: { params: { id: string }}) {
     
     <div className="w-full flex justify-center items-center my-20 px-4">
   
-        {/* <div className=''>
+        <div className=''>
             <Image
               src={urlForImage(data[0]?.image).url()}
               alt={"product image"}
               width={300}
               height={500} />
-          </div> */}
+          </div>
           
           <div className="p-4">
               <div className="">

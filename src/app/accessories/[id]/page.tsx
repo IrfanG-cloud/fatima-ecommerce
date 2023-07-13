@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import React from 'react';
 import { client } from '../../../lib/sanityClient'
@@ -9,9 +9,8 @@ import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
 
-  const getServerSideProps:any = (param='') => {
+const getServerSideProps:any = (param='') => {
   console.log(param)
-  
   const res = client.fetch(`*[_type== 'product' && category-> name== 'accessories' && title=='']{
     title,
     description,
