@@ -26,7 +26,7 @@ interface IProduct {
     }
 }
 
-export default async function Accessories() {
+export default async function Accessories( {  }: { products: IProduct[] }) {
   const products:IProduct[] = await getProductData ();
 
   return (
