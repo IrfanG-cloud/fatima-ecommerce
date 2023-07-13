@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import React, { FC } from 'react'
 import Link from 'next/link'
@@ -7,9 +7,9 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
-export const getServerSideProps = () => {
+export const getServerSideProps = async () => {
 
-    const res = client.fetch(`*[_type== 'product' && category-> name== 'kids']`)
+    const res = await client.fetch(`*[_type== 'product' && category-> name== 'kids']`)
     return res;
   }
   
