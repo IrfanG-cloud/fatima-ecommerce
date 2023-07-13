@@ -28,8 +28,8 @@ export const getProductData =  () => {
   
   
 
-export default async function Accessories(){
-    const data:IProduct[] = await getProductData();
+export default  function Accessories(){
+    const data: any =  getProductData();
     console.log(data);
 
   return (
