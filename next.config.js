@@ -5,13 +5,8 @@ const nextConfig = {
     }
 }
 
-// module.exports = nextConfig 
+module.exports = nextConfig 
 
-module.exports = {
-  target: 'serverless',
-  output: 'export',
-  // ...other configurations
-}
 
 
 
