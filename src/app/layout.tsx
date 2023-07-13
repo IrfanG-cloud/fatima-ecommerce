@@ -2,7 +2,7 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import './globals.css'
-// import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import Providers from './components/Provider'
 
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // <ClerkProvider>
+    <ClerkProvider>
     <html lang="en">
       <body >
         <Providers>
@@ -27,6 +27,6 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-    // </ClerkProvider>
+    </ClerkProvider>
   )
 }
