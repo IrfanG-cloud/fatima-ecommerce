@@ -9,7 +9,7 @@ import { urlForImage } from '../../../../sanity/lib/image'
 import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
-export const getServerSideProps:any = (param='') => {
+  const getServerSideProps:any = (param='') => {
   console.log(param)
   const res = client.fetch(`*[_type== 'product' && category-> name== 'bags' && title=='T-shirtboys']{
     title,
