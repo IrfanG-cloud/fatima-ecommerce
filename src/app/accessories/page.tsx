@@ -7,7 +7,7 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
-const getProductData = async () =>{
+const getServerSideProps = async () =>{
   const products = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`);
   console.log( products);  // Log the products to console.
   
@@ -27,7 +27,7 @@ interface IProduct {
 }
 
 export default async function Accessories() {
-  const products:IProduct[] = await getProductData();
+  const products:IProduct[] = await getServerSideProps ();
 
   return (
     <div className="w-full my-20">

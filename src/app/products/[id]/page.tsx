@@ -9,9 +9,9 @@ import { urlForImage } from '../../../../sanity/lib/image'
 import Link from 'next/link'
 import Counter from '@/app/components/Counter'
 
-export const getProductData:any = async(param='') => {
+export const getProductData:any = (param='') => {
 
-  const res = await client.fetch(`*[_type== 'product' && title=='${param}']{
+  const res = client.fetch(`*[_type== 'product' && title=='${param}']{
     title,
     description,
     price,
@@ -66,13 +66,13 @@ export default async function page({ params }: { params: { id: string }}) {
           
           <div className="p-4">
               <div className="">
-                <h1 className="text-2xl my-4">{data[0].title}</h1>
+                <h1 className="text-2xl my-2">{data[0].title}</h1>
               </div>
               <div className="">
-                <h1 className="text-lg my-4">{data[0].description}</h1>
+                <h1 className="text-lg my-2">{data[0].description}</h1>
               </div>
-              <div>
-                  <p className='text-lg'> {data[0].price} AED</p>
+              <div className='text-2xl'>
+                  <p> {data[0].price} AED</p>
                 </div>
  
               {/* <div>
@@ -81,9 +81,9 @@ export default async function page({ params }: { params: { id: string }}) {
 
               <div className='my-4'>
 
-                <div>
+                <div className="">
                   <Link href={'https://api.whatsapp.com/send?phone=963995817380'}>
-                    <button onClick={()=>handleAddToCart()} className="bg-[#000] text-white p-2 hover:bg-[#000]">
+                    <button onClick={()=>handleAddToCart()} className="w-full bg-[#000] text-white p-2 hover:bg-[#000]">
                       Book Your Order
                     </button>
                   </Link>
