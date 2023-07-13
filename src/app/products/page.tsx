@@ -39,14 +39,14 @@ export default async function Products() {
 
     const data:IProduct[]= await getProductData();
 
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     <div className="w-full my-20">
