@@ -5,7 +5,7 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
-const getServerSideProps = async () => {
+const getProductData = async () => {
 
     const res = await client.fetch(`*[_type== 'product' && category-> name== 'bags']`)
   
@@ -29,7 +29,7 @@ const getServerSideProps = async () => {
   
 
 export default async function Men(){
-    const data:IProduct[] = await getServerSideProps();
+    const data:IProduct[] = await getProductData();
     console.log(data);
 
   //  const handleAddToCart = async () => {
