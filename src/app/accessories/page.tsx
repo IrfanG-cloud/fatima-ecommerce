@@ -5,13 +5,16 @@ import { client } from '../../lib/sanityClient'
 import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
-const getProductData = async () => {
+const getServerSideProps = async () => {
 
     const res = await client.fetch(`*[_type== 'product' && category-> name== 'accessories']`)
   
-    return res;
+    return {
+      props: {
+        res
+      },
+    };
 
-      console.log(res)
   }
   
   interface IProduct{
@@ -29,22 +32,13 @@ const getProductData = async () => {
   
 
 export default async function Accessories(){
-    const data:IProduct[] = await getProductData();
+    const data: any = await getServerSideProps();
     console.log(data);
-
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
 
   return (
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-        {data.map((item) => (
+        {data.map((item:any) => (
         <div key={item.id} className="item p-6 border my-2 border-[#cdcdcd]">
             <Link href={/products/+item.title}>
             <Image 
