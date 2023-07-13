@@ -50,7 +50,7 @@ export default async function Men(){
                 width={300} height={500} />
             <span>{item.price} AED</span>
             <p>{item.title}</p>
-            <p>{item.description}</p>
+            {/* <p>{item.description}</p> */}
             </Link>
             
             </div>

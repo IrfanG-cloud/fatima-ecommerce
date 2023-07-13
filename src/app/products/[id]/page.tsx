@@ -54,7 +54,7 @@ export default async function page({ params }: { params: { id: string }}) {
 
   return (
     
-    <div className="w-full flex justify-center items-center my-20 px-4">
+    <div className="w-full flex flex-col justify-center items-center my-20 px-4 md:flex md:justify-center">
   
         <div className=''>
             <Image
@@ -66,24 +66,27 @@ export default async function page({ params }: { params: { id: string }}) {
           
           <div className="p-4">
               <div className="">
-                <h1 className="text-3xl my-4">{data[0].title}</h1>
+                <h1 className="text-2xl my-4">{data[0].title}</h1>
               </div>
- 
+              <div className="">
+                <h1 className="text-lg my-4">{data[0].description}</h1>
+              </div>
               <div>
+                  <p className='text-lg'> {data[0].price} AED</p>
+                </div>
+ 
+              {/* <div>
               <div className='ml-4' my-6><Counter /></div>
-              </div>
+              </div> */}
 
-              <div className='flex my-4'>
+              <div className='my-4'>
+
                 <div>
                   <Link href={'https://api.whatsapp.com/send?phone=963995817380'}>
                     <button onClick={()=>handleAddToCart()} className="bg-[#000] text-white p-2 hover:bg-[#000]">
-                      Add to Cart
+                      Book Your Order
                     </button>
                   </Link>
-                </div>
-                  
-                <div>
-                  <p className='ml-4 font-bold text-2xl'> {data[0].price} AED</p>
                 </div>
                   
               </div>

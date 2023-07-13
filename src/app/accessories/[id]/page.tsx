@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import React from 'react';
 import { client } from '../../../lib/sanityClient'
@@ -54,25 +54,25 @@ export default async function page({ params }: { params: { id: string }}) {
 
   return (
     
-    <div className="w-full flex justify-center items-center my-20 px-4">
-  
+    <div className="w-full justify-center items-center my-20 px-4"> 
         <div className=''>
             <Image
               src={urlForImage(data[0]?.image).url()}
               alt={"product image"}
               width={300}
               height={500} />
-          </div>
+        </div>
           
           <div className="p-4">
               <div className="">
-                <h1 className="text-3xl my-4">{data[0]?.title}</h1>
+                <h1 className="text-xl my-4">{data[0]?.title}</h1>
+                <h1 className="text-xl my-4">{data[0]?.description}</h1>
               </div>
- 
+              
               <div>
               <div className='ml-4 my-6'><Amountincrease /></div>
               </div>
-
+              
               <div className='flex my-4'>
                 <div>
                   <Link href={"https://api.whatsapp.com/send?phone=963995817380"}>
@@ -83,12 +83,13 @@ export default async function page({ params }: { params: { id: string }}) {
                 </div>
                   
                 <div>
-                  <p className='ml-4 font-bold text-2xl'>{data[0]?.price} AED</p>
+                  <p className='ml-4 text-xl'>{data[0]?.price} AED</p>
                 </div>
                   
               </div>
               
           </div>
+ 
     </div>
 
   )

@@ -52,7 +52,6 @@ export default async function Women() {
             />
             <p>{item.price} AED</p>
             <h3>{item.title}</h3>
-            <h3>{item.description}</h3>
             </Link>
         </div>
     ))}

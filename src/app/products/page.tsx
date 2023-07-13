@@ -62,7 +62,6 @@ export default async function Products() {
             />
             <p>{item.price} AED</p>
             <p>{item.title}</p>
-            <p>{item.description}</p>
             </Link>
         </div>
     ))}

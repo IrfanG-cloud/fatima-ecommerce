@@ -43,7 +43,7 @@ export default async function Accessories() {
                         />
                         <p>{item.price} AED</p>
                         <p >{item.title}</p>
-                        <p>{item.description}</p>
+                        {/* <p>{item.description}</p> */}
                     </Link>
                 </div>
             ))}
