@@ -19,7 +19,7 @@ import Amountincrease from '@/app/components/Counter';
     image,
     category -> {
       name
-    }
+    }, { cache: 'no-store'}
   }`)
 
     return res;
