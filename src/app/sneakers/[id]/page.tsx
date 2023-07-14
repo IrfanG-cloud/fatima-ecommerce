@@ -1,4 +1,4 @@
-
+'use server'
 
 import React from 'react';
 import { client } from '../../../lib/sanityClient'
@@ -9,7 +9,6 @@ import { urlForImage } from '../../../../sanity/lib/image'
 import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
-'use server'
 
   const getServerSideProps:any = (param='') => {
   console.log(param)
