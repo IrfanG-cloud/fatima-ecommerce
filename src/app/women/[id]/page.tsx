@@ -43,14 +43,14 @@ export default async function page({ params }: { params: { id: string }}) {
   const data= await getServerSideProps(param);
     console.log(data)
 
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     
@@ -69,11 +69,11 @@ export default async function page({ params }: { params: { id: string }}) {
                 <h1 className="text-3xl my-4">{data[0]?.title}</h1>
               </div>
  
-              <div>
+              {/* <div>
               <div className='ml-4 my-6'>
                 <Amountincrease />
               </div>
-              </div>
+              </div> */}
 
               <div className='flex my-4'>
                 <div>

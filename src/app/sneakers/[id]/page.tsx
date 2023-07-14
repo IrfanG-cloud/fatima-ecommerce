@@ -62,9 +62,9 @@ export default async function page({ params }: { params: { id: string }}) {
                 <h1 className="text-3xl my-4">{data[0]?.title}</h1>
               </div>
  
-              <div>
+              {/* <div>
               <div className='ml-4 my-6'><Amountincrease /></div>
-              </div>
+              </div> */}
 
               <div className='flex my-4'>
                 <div>
