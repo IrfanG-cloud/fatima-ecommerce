@@ -9,6 +9,8 @@ import { urlForImage } from '../../../../sanity/lib/image'
 import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
+'use server'
+
   const getServerSideProps:any = (param='') => {
   console.log(param)
 
@@ -19,7 +21,7 @@ import Amountincrease from '@/app/components/Counter';
     image,
     category -> {
       name
-    }, { cache: 'no-store'}
+    }
   }`)
 
     return res;
