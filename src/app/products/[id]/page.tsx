@@ -1,4 +1,3 @@
-'use client';
 
 import React, { useContext } from 'react'
 import { client } from '../../../lib/sanityClient'
