@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import React from 'react';
 import { client } from '../../../lib/sanityClient'
