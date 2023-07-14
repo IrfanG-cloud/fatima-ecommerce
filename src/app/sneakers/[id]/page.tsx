@@ -10,10 +10,10 @@ import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
 
-  const getServerSideProps:any = (param='') => {
+  const getServerSideProps:any = async (param='') => {
   console.log(param)
 
-  const res = client.fetch(`*[_type== 'product' && category-> name== 'sneakers' && title=='']{
+  const res = await client.fetch(`*[_type== 'product' && category-> name== 'sneakers' && title=='']{
     title,
     description,
     price,
@@ -44,16 +44,7 @@ export default async function page({ params }: { params: { id: string }}) {
 
   const data= await getServerSideProps(param);
     console.log(data)
-
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
-
+    
   return (
     
     <div className="w-full flex justify-center items-center my-20 px-4">

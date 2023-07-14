@@ -6,9 +6,9 @@ import { Image as IImage } from 'sanity'
 import { urlForImage } from '../../../sanity/lib/image'
 
 
-  const getServerSideProps = () => {
+  const getServerSideProps = async () => {
 
-    const res = client.fetch(`*[_type== 'product' && category-> name== 'bags']`)
+    const res = await client.fetch(`*[_type== 'product' && category-> name== 'bags']`)
   
     return res;
 

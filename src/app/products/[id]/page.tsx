@@ -7,11 +7,10 @@ import { Image as IImage, useDataset } from 'sanity'
 import { urlForImage } from '../../../../sanity/lib/image'
 
 import Link from 'next/link'
-import Counter from '@/app/components/Counter'
 
-const getServerSideProps:any = (param='') => {
+const getServerSideProps:any = async (param='') => {
 
-  const res = client.fetch(`*[_type== 'product' && title=='${param}']{
+  const res = await client.fetch(`*[_type== 'product' && title=='${param}']{
     title,
     description,
     price,
@@ -43,14 +42,14 @@ export default async function page({ params }: { params: { id: string }}) {
 
   const data= await getServerSideProps(param);
     
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
+  //  const handleAddToCart = async () => {
+  //   const res = fetch("/api/cart", {
+  //       method: "POST",
+  //       body:JSON.stringify({
+  //           // product_id: item._id
+  //       })
+  //   })
+  //  }
 
   return (
     
@@ -83,7 +82,7 @@ export default async function page({ params }: { params: { id: string }}) {
 
                 <div className="">
                   <Link href={'https://api.whatsapp.com/send?phone=963995817380'}>
-                    <button onClick={()=>handleAddToCart()} className="w-full bg-[#000] text-white p-2 hover:bg-[#000]">
+                    <button className="w-full bg-[#000] text-white p-2 hover:bg-[#000]">
                       Book Your Order
                     </button>
                   </Link>
