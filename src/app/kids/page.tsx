@@ -28,8 +28,6 @@ import { urlForImage } from '../../../sanity/lib/image'
 export default async function Kids() {
 
     const data:IProduct[]= await getServerSideProps();
-    console.log(data);
-
     
   return (
     <div className="w-full my-20">

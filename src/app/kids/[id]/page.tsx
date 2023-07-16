@@ -9,7 +9,7 @@ import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
   const getServerSideProps:any = async (param='') => {
-  console.log(param)
+
   const res = await client.fetch(`*[_type== 'product' && category-> name== 'kids' && title=='T-shirtboys']{
     title,
     description,
@@ -41,16 +41,6 @@ export default async function page({ params }: { params: { id: string }}) {
  let param: string = params.id;
 
   const data= await getServerSideProps(param);
-    console.log(data)
-
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
 
   return (
     

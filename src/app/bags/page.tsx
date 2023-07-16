@@ -11,8 +11,6 @@ import { urlForImage } from '../../../sanity/lib/image'
     const res = await client.fetch(`*[_type== 'product' && category-> name== 'bags']`)
   
     return res;
-
-      console.log(res)
   }
   
   interface IProduct{
@@ -31,7 +29,6 @@ import { urlForImage } from '../../../sanity/lib/image'
 
 export default async function Men(){
     const data:IProduct[] = await getServerSideProps();
-    console.log(data);
 
   return (
     <div className="w-full my-20">

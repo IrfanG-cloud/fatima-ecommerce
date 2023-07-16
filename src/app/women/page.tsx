@@ -27,7 +27,7 @@ const getServerSideProps = async () => {
 export default async function Women() {
 
     const data:IProduct[]= await getServerSideProps();
-    console.log(data);
+
 
   return (
     <div className="w-full my-20">

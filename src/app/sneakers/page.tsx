@@ -11,8 +11,6 @@ const getProductData = async () => {
     const res = await client.fetch(`*[_type== 'product' && category-> name== 'sneakers']`)
   
     return res;
-
-      console.log(res)
   }
   
   interface IProduct{
@@ -28,7 +26,6 @@ const getProductData = async () => {
 
 export default async function Sneakers(){
     const data:IProduct[]= await getProductData();
-    console.log(data);
 
    const handleAddToCart = async () => {
     const res = fetch("/api/cart", {

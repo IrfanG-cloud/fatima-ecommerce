@@ -25,17 +25,9 @@ export const getProductData = async () => {
 
 export default async function Promotions() {
     const data:IProduct[]= await getProductData();
-    console.log(data);
 
-   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
-        method: "POST",
-        body:JSON.stringify({
-            // product_id: item._id
-        })
-    })
-   }
-
+    // let dataSlice = data.slice(0,3) // 3 image show
+    
   return (
     <div className="w-full mt-16">
         <div className='text-center py-6'>
@@ -44,21 +36,21 @@ export default async function Promotions() {
             </span>
             <h1 className=' text-2xl font-bold md:text-4xl'>Our Promotions Events</h1>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>
-        {data.map((item) => (
-            <div key={item.id} className="item py-4">
+        <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-x-1 px-6 '>
+            {data.map((item) => (
+              <div key={item.id} className="item py-4 justify-center">
                 <Link href="/products" className='transition-transform duration-500 ease-in-out transform hover:scale-150'>
                 <Image 
                     src={urlForImage(item.image).url()} 
                     alt="product" 
-                    width={300}
+                    width={400}
                     height={500} 
                 />
                 <p className='font-bold'>{item.price} AED</p>
                 <p>{item.title}</p>
-                <p>{item.description}</p>
+                {/* <p>{item.description}</p> */}
                 </Link>
-            </div>
+              </div>
         ))}
         </div>
     </div>

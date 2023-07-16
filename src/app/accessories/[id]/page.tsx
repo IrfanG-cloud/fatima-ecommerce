@@ -9,7 +9,7 @@ import Amountincrease from '@/app/components/Counter';
 
 
 const getServerSideProps:any = async (param='') => {
-  console.log(param)
+  
   const res = await client.fetch(`*[_type== 'product' && category-> name== 'accessories' && title=='']{
     title,
     description,
@@ -41,7 +41,6 @@ export default async function page({ params }: { params: { id: string }}) {
  let param: string = params.id;
 
   const data= await getServerSideProps(param);
-    console.log(data)
    
   return (
     

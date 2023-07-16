@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Amountincrease from '@/app/components/Counter';
 
   const getServerSideProps:any = async (param='') => {
-  console.log(param)
+
   const res = await client.fetch(`*[_type== 'product' && category-> name== 'watches' && title=='']{
     title,
     description,

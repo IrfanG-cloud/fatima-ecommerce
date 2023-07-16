@@ -13,7 +13,6 @@ const getServerSideProps = async () => {
   
     return res;
 
-      console.log(res)
   }
   
   interface IProduct{
@@ -29,8 +28,7 @@ const getServerSideProps = async () => {
 
 export default async function Men(){
     const data:IProduct[]= await getServerSideProps();
-    console.log(data);
-
+  
   return (
     <div className="w-full my-20">
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-4 px-6'>

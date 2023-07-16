@@ -16,7 +16,6 @@ export default function Counter() {
       (state: RootState)=>state.counterSlice.value
     );
       
-    console.log(counterValue)
 
     const increment = () => {
       dispatch(counterActions.increment());
