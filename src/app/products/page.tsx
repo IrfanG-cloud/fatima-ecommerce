@@ -13,6 +13,8 @@ const getServerSideProps = async () => {
       description,
       price,
       image,
+      size,
+      quantity,
       category -> {
         name
       }
@@ -28,6 +30,8 @@ const getServerSideProps = async () => {
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
       name:string
     }
@@ -37,14 +41,6 @@ const getServerSideProps = async () => {
 export default async function Products() {
     const data:IProduct[]= await getServerSideProps();
 
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
 
   return (
     <div className="w-full my-20">

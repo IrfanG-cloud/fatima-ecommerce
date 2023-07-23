@@ -30,6 +30,8 @@ import Amountincrease from '@/app/components/Counter';
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
     name:string
     }
@@ -43,14 +45,6 @@ export default async function page({ params }: { params: { id: string }}) {
   const data= await getServerSideProps(param);
     console.log(data)
 
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
 
   return (
     

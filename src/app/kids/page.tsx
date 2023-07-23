@@ -19,6 +19,8 @@ import { urlForImage } from '../../../sanity/lib/image'
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
       name:string
     }

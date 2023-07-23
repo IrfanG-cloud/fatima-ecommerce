@@ -8,7 +8,7 @@ import Counter from '@/app/components/Counter'
 
 
 
-export default function page() {
+export default function CheckOut() {
   return (
  
     <div className="w-full my-20">

@@ -17,6 +17,8 @@ export const getProductData = async () => {
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
       name:string
     }
@@ -43,7 +45,7 @@ export default async function Checkproduct() {
                 <Image 
                     src={urlForImage(item.image).url()} 
                     alt="product" 
-                    width={300} 
+                    width={400} 
                     height={500} 
                 />
                 <p>{item.price} AED</p>

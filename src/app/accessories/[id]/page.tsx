@@ -30,6 +30,8 @@ const getServerSideProps:any = async (param='') => {
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
     name:string
     }

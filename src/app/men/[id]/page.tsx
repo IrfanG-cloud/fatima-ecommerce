@@ -29,6 +29,8 @@ import Amountincrease from '@/app/components/Counter';
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
     name:string
     }

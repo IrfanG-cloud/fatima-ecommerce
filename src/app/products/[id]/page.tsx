@@ -1,11 +1,13 @@
-
 import React, { useContext } from 'react'
 import { client } from '../../../lib/sanityClient'
 import Image from 'next/image'
 import { Image as IImage, useDataset } from 'sanity'
 import { urlForImage } from '../../../../sanity/lib/image'
-
 import Link from 'next/link'
+import Counter from '@/app/components/Counter'
+import AddToCartButton from '@/app/components/AddToCardButton'
+
+
 
 const getServerSideProps:any = async (param='') => {
 
@@ -14,6 +16,8 @@ const getServerSideProps:any = async (param='') => {
     description,
     price,
     image,
+    size,
+    quantity,
     category -> {
       name
     }
@@ -28,6 +32,8 @@ const getServerSideProps:any = async (param='') => {
     description:string,
     price: number,
     image: IImage,
+    size: string,
+    quantity: number,
     category: {
     name:string
     }
@@ -38,58 +44,52 @@ export default async function page({ params }: { params: { id: string }}) {
 
  let param: string = params.id;
 
-
   const data= await getServerSideProps(param);
-    
-  //  const handleAddToCart = async () => {
-  //   const res = fetch("/api/cart", {
-  //       method: "POST",
-  //       body:JSON.stringify({
-  //           // product_id: item._id
-  //       })
-  //   })
-  //  }
 
   return (
     
-    <div className="w-full flex flex-col justify-center items-center my-20 px-4 md:flex md:justify-center">
-  
+    <div className="w-full my-20 justify-center items-center px-4 md:flex">
         <div className=''>
             <Image
               src={urlForImage(data[0].image).url()}
               alt={"product image"}
               width={300}
               height={500} />
-          </div>
+        </div>
           
-          <div className="p-4">
+        <div className="p-4 md:ml-8">
               <div className="">
-                <h1 className="text-2xl my-2">{data[0].title}</h1>
+                <h1 className="text-[20px] my-2">{data[0].title}</h1>
               </div>
               <div className="">
-                <h1 className="text-lg my-2">{data[0].description}</h1>
+                <h1 className="text-[16px] my-2">{data[0].description}</h1>
               </div>
-              <div className='text-2xl'>
+              <div className='text-[20px]'>
                   <p> {data[0].price} AED</p>
+              </div>
+              <div className='flex text-[16px] '>
+                  <p>Size: </p>
+                  <div className="flex px-4 ">
+                  {
+                    data.map((item:any, index:any)=> (
+                      <div key={index} className='cursor-pointer'>{item.size}</div>
+                    ))
+                  }
+                  </div>
+              </div>
+
+                <div className="flex md:flex-row m-0">
+                  <Counter/>
                 </div>
- 
-              {/* <div>
-              <div className='ml-4' my-6><Counter /></div>
-              </div> */}
-
-              <div className='my-4'>
-
-                <div className="">
-                  <Link href={'https://api.whatsapp.com/send?phone=963995817380'}>
-                    <button className="w-full bg-[#000] text-white p-2 hover:bg-[#000]">
+              
+              <div className="mt-6 ">
+                  <Link href={'https://api.whatsapp.com/send?phone=963995817380'} className="bg-[#000000] w-full text-white py-2 px-4 hover:bg-[#cdcdcd]">
                       Book Your Order
-                    </button>
                   </Link>
-                </div>
-                  
+                  <AddToCartButton />
               </div>
               
-          </div>
+        </div>
     </div>
 
   )
